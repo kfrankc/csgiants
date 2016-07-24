@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>CS Giants</title>
+  	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- og tags -->
+    <meta property="og:url" content="http://www.kfrankc.me/csgiants/index.html" />
+    <meta property="og:title" content="CS Giants" />
+    <meta property="og:description" content="A collection of notable Computer Science Professors &amp; Researchers" />
+    <meta property="og:image" content="http://www.kfrankc.me/csgiants/img/nerualnet.jpg" />
+    <meta property="og:image:width" content="322" />
+    <meta property="og:image:height" content="325" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A collection of notable Computer Science Professors &amp; Researchers">
+    <meta name="author" content="Frank Chen">
+    <!--css-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/handlebars.min-latest.js"></script>
+    <script src="js/dataloader.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!-- responsive icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+  	<script> new WOW().init(); </script>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="http://kfrankc.me"> Home</a></li>
+			</ul>
+		</nav>
+	<h2><a href="index.html">Computer Science Giants</a></h2>
+	</header>
+	<div class="wow fadeIn">
+		<section>
+			<div class="fill">
+				<img data-src="img/neuralnet.jpg">
+			</div>
+			<p>Welcome! Below you can find a list (constantly updated) of notable Computer Science Professors &amp; Researchers, as well as links to some of their papers. Special thanks to <b><a href="https://www.ics.uci.edu/~yyang8/" target="_blank">Yi Yang</a></b> for giving me the inspiration to compile this list.</p>
+		</section>
+	</div>
+	<section>
+		<div id="content">
+			<script id="card-template" type="text/x-handlebars-template">
+				{{#each apidata}}
+				<div class="wow fadeIn">
+					<div class="card" id="card-{{@index}}">
+						<h3 class="card-title" style="align:left"><b><a href="{{website}}" target="_blank">{{name}}</a></b> <i>{{field}}</i><span style="float: right;">{{university}}</span></h3>
+						<h5><a href="{{paper1}}" target="_blank">{{title1}}</a></h5>
+						<h5><a href="{{paper2}}" target="_blank">{{title2}}</a></h5>
+					</div>
+				</div>
+				<br>
+				{{/each}}
+			</script>
+		</div>
+	</section>
+	<script src="js/imageloader.js"></script>
+  </body>
+</html>
